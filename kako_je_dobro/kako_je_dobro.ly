@@ -204,7 +204,7 @@ basText = \lyricmode {
   \with { shortInstrumentName = "S" }
   <<
     \new Voice = "sopran" {
-      \set Staff.midiMaximumVolume = #0.7
+      %\set Staff.midiMaximumVolume = #0.7
       \global
       \sopran
     }
@@ -217,7 +217,7 @@ basText = \lyricmode {
   \with { shortInstrumentName = "A" }
   <<
     \new Voice = "alt" {
-      \set Staff.midiMaximumVolume = #0.7
+      %\set Staff.midiMaximumVolume = #0.7
       \global
       \alt
     }
@@ -230,7 +230,7 @@ basText = \lyricmode {
   \with { shortInstrumentName = "T" }
   <<
     \new Voice = "tenor" {
-      \set Staff.midiMinimumVolume = #0.6
+      %\set Staff.midiMinimumVolume = #0.6
       \global
       \tenor
     }
@@ -243,7 +243,7 @@ basText = \lyricmode {
   \with { shortInstrumentName = "B" }
   <<
     \new Voice = "bas" {
-      \set Staff.midiMaximumVolume = #0.7
+      %\set Staff.midiMaximumVolume = #0.7
       \global
       \bas
     }
@@ -253,10 +253,10 @@ basText = \lyricmode {
   >>
 >>
 
-%\layout {
-%  indent = 0 \cm
-%  #(layout-set-staff-size 16)
-%}
+\layout {
+  indent = 0 \cm
+  #(layout-set-staff-size 16)
+}
 
 \midi {}
 
