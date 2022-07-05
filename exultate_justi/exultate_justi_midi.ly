@@ -23,8 +23,11 @@ global = {
 }
 
 sopran = \relative c {
+  \tempo 2 = 110
   a''1 a2 | a1 b2 | cis cis e | d1 d2 | cis \breathe e d | cis1 a2 | b1 cis2  |
-  b1 b2 | \time 4/4 cis2 cis4 cis | d d8 d cis4 d | e2 e4 e | fis4 fis8 fis e4  b | b2 \breathe cis  |
+  b1 b2 | \time 4/4 cis2
+  \tempo 4 = 130
+  cis4 cis | d d8 d cis4 d | e2 e4 e | fis4 fis8 fis e4  b | b2 \breathe cis  |
   d8( cis d e fis e d cis | b4 cis b4.) b8 | cis2 \breathe e4 e | fis fis8 fis e4 dis | e1  |
   r4 fis4 fis8( e d cis | b4 a2) gis4 | a \breathe e'2 e4 | d d8 d cis4 cis8 cis  | b4 b \breathe e e  |
   d4 d8 d cis4 cis8 cis| b2 a | r cis~ | cis4 b8 a b4 e, | r1  |
@@ -33,7 +36,9 @@ sopran = \relative c {
   r2 e4 e | d d8 d cis2 | b4 b a a | gis cis2 a4 | gis2( fis) |
   gis2 r | r1 | r2 e'4 e | d d8 d cis2 | b r | cis2. cis4  |
   b4 b8 b a2 | gis r4 e' | cis4 cis8 cis cis4 b | a2 a4 e' | cis4 cis8 cis cis4 b | a8( b cis d e2) |
-  e4 \breathe e e e8 d | cis2( b~ | b4) a a2(~ | a4 gis8 fis gis2) | a1 \breathe | \time 3/2 a1 a2 | a1 b2  |
+  e4 \breathe e e e8 d | cis2( b~ | b4) a a2(~ | a4 gis8 fis gis2) | a1 \breathe |
+  \time 3/2 \tempo 2 = 110
+  a1 a2 | a1 b2  |
   cis2 cis e | d1 d2 | cis2 \breathe e d | cis1 a2 | b1 cis2 | b1 b2 | \time 2/2 cis1 \breathe | d | cis | a2. a4 | a1 \bar ".|" |
 }
 
@@ -81,7 +86,9 @@ bas = \relative c {
   r2 e'4 e | d d8 d cis2 | b r | r a4 a | e' e8 e d2 | a \breathe a4 a |
   e4 e8 e fis2 | cis e | a4 a8 a a4 b | cis2 a4 \breathe e | a a8 a a4 b | cis2 a4 e |
   cis4 cis8 b a2~ | a b | cis2.( d4 | e1) | a, \breathe | a' a2 | fis1 e2 |
-  a2 a cis | b1 b2 | a \breathe a b | cis1 d2 | b1 a2 | e1 e2 | a,1 \breathe | d2.( e4 | fis2) cis | d2. d4 | a1 |
+  a2 a cis | b1 b2 | a \breathe a b | cis1 d2 | b1 a2 | e1 e2 | a,1 \breathe |
+  \tempo 2 = 90
+  d2.( e4 | fis2) cis | d2. d4 | a1 |
 }
 
 sopranText = \lyricmode {
@@ -194,7 +201,8 @@ basText = \lyricmode {
   \with { shortInstrumentName = "T. " }
   <<
     \new Voice = "tenor" {
-      \set Staff.midiMaximumVolume = #0.7
+      \set Staff.midiMinimumVolume = #0.6
+      %\set Staff.midiMaximumVolume = #0.7
       \global
       \tenor
     }
@@ -207,7 +215,7 @@ basText = \lyricmode {
   \with { shortInstrumentName = "B. " }
   <<
     \new Voice = "bas" {
-      \set Staff.midiMinimumVolume = #0.6
+      \set Staff.midiMaximumVolume = #0.7
       \global
       \bas
     }
@@ -217,11 +225,7 @@ basText = \lyricmode {
   >>
 >>
 
-\layout {
-  indent = 1 \cm
-  #(layout-set-staff-size 16)
-}
-
+\layout {} 
 \midi {}
 
 }
