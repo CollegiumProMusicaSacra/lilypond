@@ -161,10 +161,10 @@ bas = \relative c {
   r1 d4 ^\pocoF f4.( e16[ d] c8[ d e f] g4. \tenuto f16[ e] d8[ e ^\< f g] \! a4. \tenuto g16[ f] e4~ |
   e8[ f] g4. f16[ e] d4. e8 f2) a,4 \breathe | c2. ^\< ^\markup {"poco rit."} c4 \! f,1 ^\f |
   r \breve | r \breve |
-  f'8 ^\f e d c g'4. g8 c,4 ees8 c d4. d8 | g,4 bes2 g4 c2. c4 |
+  f'8 ^\f e d c g'4. g8 c,4 ees8 c d4. d8 | g,4 bes2 a4 c2. c4 |
   f,1 r | r \breve |
   r1 r2 r4 f' ^\f | d8 f bes, bes d f a, c g4 c r c8 d |
-  e2. d8 e f4. f8 bes,2 | r4 g8 ^\markup { \italic "cresc. e allarg. . . . . . . . . . . . ." } a bes2. a8 bes c4. c8 | f, \breve \fermata ^\ff \bar "|." |
+  ees2. d8 ees f4. f8 bes,2 | r4 g8 ^\markup { \italic "cresc. e allarg. . . . . . . . . . . . ." } a bes2. a8 bes c4. c8 | f, \breve \fermata ^\ff \bar "|." |
 }
 
 
@@ -266,6 +266,7 @@ basText = \lyricmode {
     \with { instrumentName =  "Sopran " }
     \with { shortInstrumentName = "S " }
     <<
+      \set Staff.midiMaximumVolume = #0.6
       \new Voice = "sopran" {
         \global
         \sopran
@@ -278,6 +279,7 @@ basText = \lyricmode {
     \with { instrumentName =  "Alt " }
     \with { shortInstrumentName = "A " }
     <<
+      \set Staff.midiMaximumVolume = #0.6
       \new Voice = "alt" {
         \global
         \alt
@@ -290,6 +292,7 @@ basText = \lyricmode {
     \with { instrumentName =  "Tenor I. " }
     \with { shortInstrumentName = "T1 " }
     <<
+      \set Staff.midiMaximumVolume = #0.6
       \new Voice = "tenor1" {
         \global
         \tenorOne
@@ -302,6 +305,7 @@ basText = \lyricmode {
     \with { instrumentName =  "Tenor II. " }
     \with { shortInstrumentName = "T2 " }
     <<
+      \set Staff.midiMaximumVolume = #0.6
       \new Voice = "tenor2" {
         \global
         \tenorTwo
@@ -314,6 +318,7 @@ basText = \lyricmode {
     \with { instrumentName =  "Bas " }
     \with { shortInstrumentName = "B " }
     <<
+      \set Staff.midiMinimumVolume = #0.8
       \new Voice = "bas" {
         \global
         \bas
@@ -328,4 +333,6 @@ basText = \lyricmode {
   indent = 0 \cm
   #(layout-set-staff-size 16)
 }
+
+\midi {}
 }
